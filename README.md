@@ -5,9 +5,10 @@ That behaviour was a test failing both in my IDE (IntelliJ) as well as Maven but
 
 # Running
 
-1. Note that the test `FailingZIOTest` fails. 
+1. Note that the test `FailingZIOTest` fails if you remove `@ignore`.
+1. Re-instate `maven-surefire-plugin` in the top level `pom.xml`. 
 1. Build this project with `mvn clean install`
-1. Note that both tests run but the latter outputs:
+1. Note that all tests run and `FailingZIOTest` outputs:
 ```
 + Not expecting any errors here
   + 11 == 11, right?
@@ -18,7 +19,11 @@ Ran 1 test in 74 ms: 1 succeeded, 0 ignored, 0 failed
 Ran 1 test in 31 ms: 0 succeeded, 0 ignored, 1 failed
 
 ```
-this despite Maven completing with:
+but the build goes on to:
 ```
 [INFO] BUILD SUCCESS
 ```
+# Solution
+
+Do not use `maven-surefire-plugin` in `pom.xml`. However, this will ignore ZIO tests so be sure to annotate
+your test with `@RunWith(classOf[ZTestJUnitRunner])`

@@ -9,16 +9,16 @@ import zio.test.junit.{JUnitRunnableSpec, ZTestJUnitRunner}
 import zio.test.{ZSpec, assert, suite, testM}
 
 @RunWith(classOf[ZTestJUnitRunner])
-class FailingZIOTest extends JUnitRunnableSpec {
+class PassingZIOTest extends JUnitRunnableSpec {
 
-  override def spec: ZSpec[TestEnvironment, Any] = suite("Naughty test")(
-    testM("11 != 12, and I damn well know it") {
+  override def spec: ZSpec[TestEnvironment, Any] = suite("Sweetness and light test")(
+    testM("11 == 11 as every one knows") {
       for {
         _11 <- ObjectToTest.elevenZIO
       } yield {
-        assert(_11)(equalTo(12))
+        assert(_11)(equalTo(11))
       }
-    } @@ timeout(10 seconds) @@ ignore
+    } @@ timeout(10 seconds)
   )
 
 }
