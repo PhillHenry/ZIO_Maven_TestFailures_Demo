@@ -7,12 +7,12 @@ import zio.test.environment.TestEnvironment
 import zio.test.junit.JUnitRunnableSpec
 import zio.test.{ZSpec, assert, suite, testM}
 
-class Test2Spec extends JUnitRunnableSpec  {
+class FailingZIOTest extends JUnitRunnableSpec  {
 
   override def spec: ZSpec[TestEnvironment, Any] = suite("Naughty test")(
     testM("11 != 12, and I damn well know it") {
       for {
-        _11 <- ObjectToTest.eleven
+        _11 <- ObjectToTest.elevenZIO
       } yield {
         assert(_11)(equalTo(12))
       }

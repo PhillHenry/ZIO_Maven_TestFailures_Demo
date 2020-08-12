@@ -4,8 +4,8 @@ import zio.{Task, ZIO}
 
 object ObjectToTest {
 
-  type ApiType = Task[Int]
+  def eleven: Int = 11
 
-  def eleven: ApiType = ZIO { 11 }
+  def elevenZIO: Task[Int] = ZIO { eleven }
 
 }

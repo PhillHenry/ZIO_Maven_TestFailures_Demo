@@ -5,7 +5,7 @@ That behaviour was a test failing both in my IDE (IntelliJ) as well as Maven but
 
 # Running
 
-1. See the test classes `Test1Spec` and  `Test2Spec`. The first passes, the second fail.
+1. Note that the test `FailingZIOTest` fails. 
 1. Build this project with `mvn clean install`
 1. Note that both tests run but the latter outputs:
 ```
