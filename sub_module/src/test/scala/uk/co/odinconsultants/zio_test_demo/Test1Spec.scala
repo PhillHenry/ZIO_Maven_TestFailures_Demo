@@ -10,9 +10,8 @@ import zio.test.{ZSpec, assert, suite, testM}
 //@RunWith(classOf[ZTestJUnitRunner])
 class Test1Spec extends JUnitRunnableSpec  {
 
-    override def spec: ZSpec[TestEnvironment, Any] = suite("Processing files (good, empty and non-existent)")(
-      testM("should collect errors") {
-
+    override def spec: ZSpec[TestEnvironment, Any] = suite("Not expecting any errors here")(
+      testM("11 == 11, right?") {
         for {
           _11 <- ObjectToTest.eleven
         } yield {
