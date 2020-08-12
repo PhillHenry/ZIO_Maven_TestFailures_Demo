@@ -10,6 +10,7 @@
 
   <modules>
     <module>sub_module</module>
+    <module>zio_test_only</module>
   </modules>
 
   <properties>

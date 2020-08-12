@@ -27,3 +27,5 @@ but the build goes on to:
 
 Do not use `maven-surefire-plugin` in `pom.xml`. However, this will ignore ZIO tests so be sure to annotate
 your test with `@RunWith(classOf[ZTestJUnitRunner])`
+
+Note that as a consequence of this, your ZIO tests should end with `Test` and your ScalaTests with `Spec`.
