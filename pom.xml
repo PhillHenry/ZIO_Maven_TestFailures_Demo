@@ -88,6 +88,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.scalatest</groupId>
         <artifactId>scalatest-maven-plugin</artifactId>
@@ -117,6 +118,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
       </plugin>
+
+      <!-- This might be why failing ZIO tests were not stopping the build  -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>

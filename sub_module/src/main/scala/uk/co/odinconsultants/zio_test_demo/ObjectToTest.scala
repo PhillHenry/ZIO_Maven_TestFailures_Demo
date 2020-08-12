@@ -8,6 +8,4 @@ object ObjectToTest {
 
   def eleven: ApiType = ZIO { 11 }
 
-  def seven:  ApiType = ZIO { 7 }
-
 }
